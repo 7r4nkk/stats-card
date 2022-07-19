@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(233, 47%, 7%);
+}
+.card{
+    text-align: center;
+    background-color: hsl(244, 38%, 16%);
+    width: 270px;
+    border-radius: 10px;
+    padding: 0 0 25px 0;
+}
+.image{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+    background-image: url(../images/image-header-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: contrast(170%);
+}
+.image::after{
+    content: "";
+    background-color: rgba(111, 25, 165, 0.5);
+    position: absolute;
+    inset: 0;
+    border-radius: 10px 10px 0 0;
+}
+.description{
+    padding: 20px 25px;
+}
+.description h4{
+    color: white;
+    font-size: 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+.description h4 span{
+    color: hsl(277, 64%, 61%);
+}
+.description p{
+    margin-top: 10px;
+    color: hsla(0, 0%, 100%, 0.6);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+.stats{
+    margin-bottom: 20px;
+}
+.stats h5{
+    margin-bottom: 5px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+.stats p{
+    font-family: 'Lexend Deca', sans-serif;
+    color: hsla(0, 0%, 100%, 0.6);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 1440px) {
+    .card{
+        text-align: left;
+        width: 900px;
+        height: 375px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0;
+        transition: 1s;
+    }
+    .card:hover{
+        transform: scale(1.5);
+        transition: 1s;
+    }
+    .image{
+        background-image: url(../images/image-header-desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        border-radius: 0 10px 10px 0;
+    }
+    .image::after{
+        border-radius: 0 10px 10px 0;
+    }
+    .description{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: center;
+        padding: 50px 0 0 0;
+        margin: 0 50px 20px 68px;
+    }
+    .description h4{
+        font-size: 26px;
+        line-height: 1.4;
+    }
+    .description p{
+        font-size: 13px;
+        padding-top: 10px;
+    }
+    .stats-global{
+        display: flex;
+        justify-content:space-evenly;
+    }
+    .stats{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        align-self: center;
+    }
+    .stats h5{
+        font-size: 18px;
+    }
+}
+
+
+
